@@ -1,0 +1,45 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Admin-only section and illustration on User Guide page",
+  "requirements": [
+    {
+      "id": "REQ-26",
+      "summary": "Add an admin-only \"For Admins\" tab/section to the existing User Guide page, visible only to authenticated admin users.",
+      "acceptanceCriteria": [
+        "When the current user is an admin, the User Guide page shows an additional tab/section labeled \"For Admins\" alongside the existing Buyer and Seller guides.",
+        "When the current user is not an admin (including anonymous users), the Admin guide content is not visible.",
+        "All Admin guide headings and body text are written in clear English and follow the same step-by-step style as the Buyer/Seller guides.",
+        "The Admin guide includes guidance for at least: accessing admin-only navigation, viewing/updating Company Account/bank details, and understanding admin access restrictions."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/UserGuidePage.tsx",
+          "operation": "modify",
+          "description": "Extend the existing tab UI to conditionally render a third tab labeled \"For Admins\" using the existing role-based access control plumbing (use the useIsAdmin() hook from the authorization system) so only authenticated admins can see it; keep Buyer/Seller content intact and the /user-guide route unchanged. Add clear step-by-step Admin guide copy covering: (1) how admins access admin-only areas via existing navigation/account entry points, (2) where to view/update Company Account/bank details (reference the existing Company Account page), and (3) what happens when a non-admin attempts to access restricted pages (access restrictions). Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-27",
+      "summary": "Add a new static admin illustration asset and display it at the top of the Admin guide section with consistent styling and meaningful alt text.",
+      "acceptanceCriteria": [
+        "A new generated image file exists under frontend/public/assets/generated using the filename specified in imageRequirements.required.",
+        "When the current user is an admin, the Admin guide section displays the new illustration at the top in a bordered/rounded container consistent with the Buyer/Seller guide sections.",
+        "The admin illustration has meaningful alt text in English describing what is shown visually."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/bozarhaat-user-guide-admin.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated static illustration asset: frontend/public/assets/generated/bozarhaat-user-guide-admin.dim_1600x900.png."
+        },
+        {
+          "path": "frontend/src/pages/UserGuidePage.tsx",
+          "operation": "modify",
+          "description": "In the admin-only \"For Admins\" tab content, render the illustration from frontend/public/assets/generated/bozarhaat-user-guide-admin.dim_1600x900.png at the top using the same bordered/rounded container pattern as the existing Buyer/Seller illustrations, and provide meaningful English alt text describing the depicted admin workflow. Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

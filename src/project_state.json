@@ -1,0 +1,297 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 13,
+  "summary": "Build an Amazon-like e-commerce website named \"Bozarhaat\" designed to align with ONDC registration and standards (ONDC-compliant marketplace).",
+  "architectural_notes": [
+    "Project is an Amazon-like e-commerce marketplace website that must align with ONDC standards for registration/compliance.",
+    "Primary domain to use: bozarhaat.com.",
+    "Seller account/hosting details will be provided later; keep deployment/hosting configuration flexible until then.",
+    "Use the user-provided logo asset in the UI/branding.",
+    "Company bank/payment recipient details must be admin-only (not public) and stored/handled as sensitive data.",
+    "Delivery partners are a third account type in addition to buyer/seller; they can publish delivery service pricing and serve external (non-Bozarhaat) e-commerce sites via the platform.",
+    "Prefer free hosting/free trial initially; use boniya@bozarhaat.com for trial signup/billing notifications until a paid plan is approved.",
+    "Add a User Guide page/tab in primary navigation with role-based guidance (Buyer vs Seller) using simple visuals/illustrations to explain key flows.",
+    "Extend the User Guide to cover Admin role guidance in addition to Buyer and Seller (admin content can be visible only to admins if it includes sensitive/admin-only workflows)."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Illustrated admin workflow guide graphic in a clean, minimal style (bozarhaat-user-guide-admin.dim_1600x900.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-the-initial-bozarhaat-frontend-ui-as-an-amazon-like-e-commerce-marketplace-scaffold-with-the-following-primary-pages-and-layouts-1-home-page-with-header-search-bar-category-navigation-cart-indicator-sign-in-account-entry-hero-section-featured-categories-and-product-grid-2-category-browse-page-with-filters-price-range-rating-availability-and-sorting-3-product-details-page-with-image-gallery-price-stock-status-variant-selectors-add-to-cart-and-product-description-specs-4-cart-page-with-line-items-quantity-controls-subtotal-and-checkout-cta-5-checkout-page-address-form-delivery-options-placeholder-order-summary-place-order-button-6-orders-page-order-list-order-details-view-7-account-page-profile-basics-saved-addresses-placeholder",
+      "title": "Create the initial Bozarhaat frontend UI as an Amazon-like e-commerce marketplace scaffold with the following primary pages and layouts: (1) Home page with header (search bar, category navigation, cart indicator, sign-in/account entry), hero section, featured categories, and product grid; (2) Category/Browse page with filters (price range, rating, availability) and sorting; (3) Product Details page with image gallery, price, stock status, variant selectors, add-to-cart, and product description/specs; (4) Cart page with line items, quantity controls, subtotal, and checkout CTA; (5) Checkout page (address form, delivery options placeholder, order summary, place order button); (6) Orders page (order list + order details view); (7) Account page (profile basics + saved addresses placeholder).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-coherent-distinct-visual-theme-for-bozarhaat-colors-typography-spacing-components-styling-and-apply-it-consistently-across-all-pages-the-theme-must-avoid-blue-purple-as-the-primary-palette-and-should-feel-like-a-modern-indian-marketplace-brand-clean-warm-high-contrast-for-readability",
+      "title": "Implement a coherent, distinct visual theme for Bozarhaat (colors, typography, spacing, components styling) and apply it consistently across all pages. The theme must avoid blue/purple as the primary palette and should feel like a modern Indian marketplace brand (clean, warm, high-contrast for readability).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-lightweight-backend-domain-model-and-apis-in-the-single-motoko-actor-to-support-the-marketplace-scaffold-with-mock-seed-data-and-basic-persistence-products-with-categories-variants-pricing-cart-per-user-principal-and-orders-per-user-principal-provide-query-endpoints-for-listing-products-and-fetching-product-detail-and-update-endpoints-for-cart-actions-and-creating-an-order-from-the-cart",
+      "title": "Add a lightweight backend domain model and APIs in the single Motoko actor to support the marketplace scaffold with mock/seed data and basic persistence: products (with categories, variants, pricing), cart (per user principal), and orders (per user principal). Provide query endpoints for listing products and fetching product detail, and update endpoints for cart actions and creating an order from the cart.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-brand-assets-as-static-images-and-integrate-them-into-the-ui-a-bozarhaat-logo-used-in-header-a-favicon-and-a-homepage-hero-banner-image-consistent-with-the-chosen-visual-theme",
+      "title": "Add generated brand assets as static images and integrate them into the UI: a Bozarhaat logo (used in header), a favicon, and a homepage hero banner image consistent with the chosen visual theme.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-bozarhaat-brand-logo-and-favicon-with-assets-derived-from-the-uploaded-image-img-20260207-wa0094-jpg-keeping-the-existing-filenames-used-by-the-app-so-no-broken-references-occur",
+      "title": "Replace the current Bozarhaat brand logo and favicon with assets derived from the uploaded image (IMG-20260207-WA0094.jpg), keeping the existing filenames used by the app so no broken references occur.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-site-branding-copy-to-reflect-the-domain-name-bozarhaat-com-in-user-facing-ui-where-appropriate-e-g-footer-or-a-small-non-intrusive-location-and-ensure-the-html-title-remains-consistent-with-the-domain-branding",
+      "title": "Update site branding copy to reflect the domain name bozarhaat.com in user-facing UI where appropriate (e.g., footer or a small, non-intrusive location), and ensure the HTML title remains consistent with the domain branding.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-onboarding-flow-that-supports-both-buyer-and-seller-registration-paths-after-login-including-a-required-account-type-selection-and-separate-forms-for-buyer-vs-seller-details",
+      "title": "Add an onboarding flow that supports both buyer and seller registration paths after login, including a required account-type selection and separate forms for buyer vs seller details.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-seller-only-area-in-the-frontend-that-allows-a-seller-to-submit-product-details-via-a-form-and-persist-submitted-products-to-the-backend-associated-with-the-seller-principal",
+      "title": "Add a seller-only area in the frontend that allows a seller to submit product details via a form, and persist submitted products to the backend associated with the seller principal.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-frontend-delivery-partner-onboarding-registration-ui-using-a-simple-form-that-captures-full-name-email-and-or-phone-can-serve-other-e-commerce-sites-yes-no-and-service-price-on-submit-save-the-user-profile-with-account-type-delivery-partner-and-then-save-the-delivery-partner-profile",
+      "title": "Add a frontend Delivery Partner onboarding/registration UI using a simple form that captures: Full name, Email and/or Phone, “Can serve other e-commerce sites?” (Yes/No), and “Service price” (₹). On submit, save the user profile with account type Delivery Partner and then save the Delivery Partner profile.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-frontend-admin-only-company-account-page-that-displays-and-optionally-allows-editing-the-stored-company-bank-details-the-page-must-be-inaccessible-to-non-admin-users-and-must-not-appear-in-public-navigation-for-non-admins",
+      "title": "Add a frontend admin-only Company Account page that displays and (optionally) allows editing the stored company bank details. The page must be inaccessible to non-admin users and must not appear in public navigation for non-admins.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-backend-and-frontend-mechanism-to-determine-whether-the-current-caller-is-an-admin-so-the-ui-can-conditionally-show-admin-only-navigation-actions-e-g-company-account-page-link",
+      "title": "Add a backend and frontend mechanism to determine whether the current caller is an admin, so the UI can conditionally show admin-only navigation/actions (e.g., Company Account page link).",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-sustainable-living-category-taxonomy-with-the-following-categories-and-use-stable-url-safe-category-ids-for-product-categoryid-food-nutrition-clothing-textiles-shelter-home-needs-water-sanitation-energy-solutions-rural-livelihood-products-health-personal-care-daily-essentials-education-skill-tools-animal-nature-care",
+      "title": "Add a Sustainable Living category taxonomy with the following categories and use stable, URL-safe category IDs for product.categoryId: Food & Nutrition; Clothing & Textiles; Shelter & Home Needs; Water & Sanitation; Energy Solutions; Rural & Livelihood Products; Health & Personal Care; Daily Essentials; Education & Skill Tools; Animal & Nature Care.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-page-and-marketplace-header-category-navigation-to-show-the-sustainable-living-category-set-english-labels-and-route-each-category-to-the-browse-page-with-the-correct-category-query-parameter",
+      "title": "Update the Home page and Marketplace header category navigation to show the Sustainable Living category set (English labels), and route each category to the Browse page with the correct category query parameter.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-browse-page-category-filter-ux-so-category-options-render-as-human-friendly-english-names-not-auto-title-cased-ids-while-still-filtering-by-the-underlying-stable-category-ids",
+      "title": "Improve Browse page category filter UX so category options render as human-friendly English names (not auto-title-cased IDs), while still filtering by the underlying stable category IDs.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-user-facing-marketing-copy-to-align-with-the-sustainable-living-positioning-by-adding-the-tagline-text-in-english-simple-sustainable-practical-for-everyday-life-in-a-visible-but-non-intrusive-place-on-the-home-page-e-g-near-the-hero-text-or-above-the-category-grid",
+      "title": "Update user-facing marketing copy to align with the Sustainable Living positioning by adding the tagline text in English: \"Simple • Sustainable • Practical for Everyday Life\" in a visible but non-intrusive place on the Home page (e.g., near the hero text or above the category grid).",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-user-guide-page-that-provides-simple-easy-to-understand-guidance-for-using-bozarhaat-for-two-audiences-1-shoppers-buyers-and-2-business-owners-sellers-the-page-must-use-clear-english-headings-short-step-by-step-instructions-and-include-illustrated-graphic-sections-that-visually-explain-the-flows",
+      "title": "Add a new “User Guide” page that provides simple, easy-to-understand guidance for using Bozarhaat for two audiences: (1) shoppers/buyers and (2) business owners/sellers. The page must use clear English headings, short step-by-step instructions, and include illustrated/graphic sections that visually explain the flows.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-user-guide-navigation-entry-tab-that-is-discoverable-from-the-main-site-navigation-on-both-desktop-and-mobile-and-navigates-to-the-user-guide-page-without-requiring-login",
+      "title": "Add a “User Guide” navigation entry (“tab”) that is discoverable from the main site navigation on both desktop and mobile, and navigates to the User Guide page without requiring login.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-integrate-the-required-new-guide-illustration-images-as-static-frontend-assets-under-the-existing-generated-assets-convention-and-render-them-in-the-user-guide-page",
+      "title": "Integrate the required new guide illustration images as static frontend assets under the existing generated assets convention and render them in the User Guide page.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-extend-the-existing-user-guide-page-to-include-an-admin-focused-guide-section-that-is-only-available-to-authenticated-admin-users",
+      "title": "Extend the existing User Guide page to include an Admin-focused guide section that is only available to authenticated admin users.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-and-render-a-new-static-illustration-asset-for-the-admin-user-guide-in-the-same-style-and-convention-as-the-existing-buyer-seller-guide-illustrations-and-display-it-in-the-admin-guide-section-on-the-user-guide-page",
+      "title": "Add and render a new static illustration asset for the Admin User Guide in the same style and convention as the existing Buyer/Seller guide illustrations, and display it in the Admin guide section on the User Guide page.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Design and build an Amazon-like e-commerce website (marketplace UX) for \"Bozarhaat\" with ONDC-compliant standards to support ONDC registration/integration.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Ensure the backend data structures are ONDC-alignment ready by modeling product and order fields in a way that can be mapped to ONDC concepts later (without implementing ONDC integration yet): include product identifiers, category taxonomy fields, fulfillment-related placeholders (shipping/delivery attributes), seller/store placeholders, price breakdown placeholders (e.g., item price, tax, delivery), and order state/status fields. Document the mapping intent in code comments and keep the model extensible for ONDC compliance work in a follow-up chat.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add onboarding forms/flows for both sellers and buyers (registration + basic profile/contact details) within Bozarhaat.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add seller-side product submission/details form as part of seller onboarding (capture product details for listings).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Extend the Motoko backend domain model to support buyer vs seller account types, seller profile placeholders, and seller-associated product creation APIs, while preserving existing cart/order functionality.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Add a Delivery Partner module: simple delivery-partner registration/onboarding form (contact + service details), allow partners to offer delivery services (set delivery/service pricing) and enable them to serve other e-commerce sites via the platform.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Add an admin-only Company Account area to store and manage Bozarhaat company banking/payout details (bank account/IFSC/account holder, GST/PAN placeholders), ensuring details are not publicly visible.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Provide hosting/deployment setup guidance and attempt a free hosting/free-trial plan using email boniya@bozarhaat.com; keep hosting flexible until finalized and route billing/trial emails to that address.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Extend the backend user/account model to support a third account type: Delivery Partner, in addition to Buyer and Seller, and keep existing Buyer/Seller flows working.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Add backend persistence and APIs for Delivery Partner registration with a simple profile form capturing: (1) contact/details fields (name, email/phone), (2) whether the delivery partner is allowed to provide service to other e-commerce sites (boolean), and (3) delivery/service price (numeric amount stored consistently with existing money handling, e.g., in paise).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Add an admin-only backend module for Company Account (bank/payout) details storage and retrieval. Store the following fields exactly as provided: Bank name: \"Bank of India\"; Account number: \"30463453451\"; IFSC: \"SBIN0009864\"; Account holder name: \"Basanta Boniya\". Ensure only admins can read or update these details.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Expand product category taxonomy to include a “Sustainable Living” set of categories (Food & Nutrition; Clothing & Textiles; Shelter & Home Needs; Water & Sanitation; Energy Solutions; Rural & Livelihood Products; Health & Personal Care; Daily Essentials; Education & Skill Tools; Animal & Nature Care) and reflect these categories in the product browsing/navigation experience.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Ensure the backend provides working product listing and product detail query APIs that the frontend can call to render category browsing (implement missing listProducts() and getProduct(productId) query methods and return stored products).",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-24",
+      "summary": "Seed at least one example product for each of the 10 Sustainable Living categories so category navigation and filtering can be tested end-to-end.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Add a \"User Guide\" tab/page in the site navigation with simple, graphic/illustrated guidance on how to use Bozarhaat for both shoppers (buyers) and business owners (sellers), making the flow easy to understand.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-26",
+      "summary": "Add an Admin section to the User Guide (or a dedicated Admin User Guide page) with role-based guidance for admin-only tasks (e.g., managing Company Account/bank details, admin navigation/access controls).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Bozarhaat",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

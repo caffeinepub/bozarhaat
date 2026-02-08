@@ -1,0 +1,70 @@
+{
+  "kind": "build_request",
+  "title": "Add Admin User Guide content to the User Guide page",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-26",
+      "text": "Extend the existing User Guide page to include an Admin-focused guide section that is only available to authenticated admin users.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Also add user guide for admin."
+        ]
+      },
+      "acceptanceCriteria": [
+        "When the current user is an admin, the User Guide page shows an additional tab/section labeled \"For Admins\" alongside the existing Buyer and Seller guides.",
+        "When the current user is not an admin (including anonymous users), the Admin guide content is not visible.",
+        "All Admin guide headings and body text are written in clear English and follow the same step-by-step style as the Buyer/Seller guides.",
+        "The Admin guide includes guidance for at least: accessing admin-only navigation, viewing/updating Company Account/bank details, and understanding admin access restrictions."
+      ]
+    },
+    {
+      "id": "REQ-27",
+      "text": "Add and render a new static illustration asset for the Admin User Guide in the same style and convention as the existing Buyer/Seller guide illustrations, and display it in the Admin guide section on the User Guide page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Also add user guide for admin."
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new generated image file exists under frontend/public/assets/generated using the filename specified in imageRequirements.required.",
+        "When the current user is an admin, the Admin guide section displays the new illustration at the top in a bordered/rounded container consistent with the Buyer/Seller guide sections.",
+        "The admin illustration has meaningful alt text in English describing what is shown visually."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend files under frontend/src/components/ui are read-only and must not be edited directly.",
+    "Do not modify the immutable authentication/actor hooks (frontend/src/hooks/useInternetIdentity.ts/tsx, frontend/src/hooks/useActor.ts). Instead, compose existing hooks such as useIsAdmin().",
+    "Keep the existing /user-guide route and existing Buyer/Seller guide content intact."
+  ],
+  "nonGoals": [
+    "Do not add new admin backend capabilities or change admin authorization rules as part of this request.",
+    "Do not add new navigation items for the admin guide outside of the existing \"User Guide\" entry unless explicitly requested.",
+    "Do not implement ONDC integration or any new marketplace functionality beyond the admin guide content."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Illustrated admin workflow guide graphic in a clean, minimal style (bozarhaat-user-guide-admin.dim_1600x900.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

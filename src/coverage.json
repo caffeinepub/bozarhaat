@@ -1,0 +1,51 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-07T21:01:19.730Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-26",
+        "summary": "Extend the existing User Guide page to include an Admin-focused guide section that is only available to authenticated admin users.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/UserGuidePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/UserGuidePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-27",
+        "summary": "Add and render a new static illustration asset for the Admin User Guide in the same style and convention as the existing Buyer/Seller guide illustrations, and display it in the Admin guide section on the User Guide page.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/bozarhaat-user-guide-admin.dim_1600x900.png",
+          "frontend/src/pages/UserGuidePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/bozarhaat-user-guide-admin.dim_1600x900.png",
+          "frontend/src/pages/UserGuidePage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/bozarhaat-user-guide-admin.dim_1600x900.png",
+    "frontend/src/pages/UserGuidePage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

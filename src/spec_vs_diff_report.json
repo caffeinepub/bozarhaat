@@ -1,0 +1,32 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-07T21:01:19.727Z",
+  "summary": "UserGuidePage.tsx was updated to conditionally show an additional \"For Admins\" tab trigger when `isAdmin` is true, but the diff does not show the Admin guide content itself nor the required new illustration asset being added/rendered. No new static image file was added under `frontend/public/assets/generated`.",
+  "missing_requirements": [
+    {
+      "id": "REQ-26",
+      "requirement": "Extend the existing User Guide page to include an Admin-focused guide section that is only available to authenticated admin users, with clear step-by-step headings/body text and guidance for accessing admin-only navigation, viewing/updating Company Account/bank details, and understanding admin access restrictions.",
+      "reason": "The diff shows only the conditional \"For Admins\" tab trigger; it does not show any corresponding `TabsContent value=\"admin\"` section or the required admin step-by-step guide text/guidance.",
+      "evidence": [
+        "frontend/src/pages/UserGuidePage.tsx (shows conditional TabsTrigger for \"admin\" but truncated before any admin content is shown)"
+      ]
+    },
+    {
+      "id": "REQ-27",
+      "requirement": "Add and render a new static illustration asset for the Admin User Guide named `bozarhaat-user-guide-admin.dim_1600x900.png` under `frontend/public/assets/generated`, and display it at the top of the Admin guide section in a bordered/rounded container with meaningful alt text.",
+      "reason": "No new files were added (diff says Added: 0), so the required image asset does not exist in the change. Also, the shown code only renders the buyer illustration; the admin illustration rendering is not evidenced.",
+      "evidence": [
+        "File diff summary: Added: 0 (no new asset under frontend/public/assets/generated)",
+        "frontend/src/pages/UserGuidePage.tsx (shows buyer image only; no admin image shown in provided diff)"
+      ]
+    }
+  ],
+  "hallucinated_features": [],
+  "confidence": 0.72,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/pages/UserGuidePage.tsx",
+    "project_state.json"
+  ]
+}

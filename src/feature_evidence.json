@@ -1,0 +1,43 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-extend-the-existing-user-guide-page-to-include-an-admin-focused-guide-section-that-is-only-available-to-authenticated-admin-users",
+      "featureTitle": "Extend the existing User Guide page to include an Admin-focused guide section that is only available to authenticated admin users.",
+      "files": [
+        "frontend/src/pages/UserGuidePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-26"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-and-render-a-new-static-illustration-asset-for-the-admin-user-guide-in-the-same-style-and-convention-as-the-existing-buyer-seller-guide-illustrations-and-display-it-in-the-admin-guide-section-on-the-user-guide-page",
+      "featureTitle": "Add and render a new static illustration asset for the Admin User Guide in the same style and convention as the existing Buyer/Seller guide illustrations, and display it in the Admin guide section on the User Guide page.",
+      "files": [
+        "frontend/src/pages/UserGuidePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-27"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
